@@ -1,0 +1,47 @@
+.About {
+    margin: var( --main-margin);
+}
+
+
+.About .infoOne h2  {
+    font-size: 50px;
+    margin: 20px 0 40px;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+.About .infoOne .infoPhoto {
+    border-radius: 20px;
+}
+
+.About .info2 .infoPhoto {
+     border-radius: 20px;
+     margin-bottom: 30px;
+}
+
+.About .info2 p {
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+/*responsve*/
+
+@media (max-width:868px) {
+    .About {
+        text-align: center;
+    }
+    .About .infoOne h2 {
+        font-size: 30px;
+    }
+    .About .infoPhoto  {
+        width: 400px;
+        height: 400px;
+        margin-bottom: 40px;
+       
+    }
+  .About .info2 p {
+    color: #777;
+    line-height: 2;
+    padding: 5px;
+   }
+   
+}

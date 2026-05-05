@@ -1,0 +1,41 @@
+.Btn {
+  padding: 13px 30px;
+  border-radius: 10px;
+  background-color: var(--btnColor);
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 20px;
+  margin-right: 10px;
+  text-decoration: none !important; /* <<< tambah ini */
+  display: inline-block; /* <<< tambah ini (penting!) */
+}
+
+.Btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  border-radius: 10px;
+  background-color: var(--scoundColor);
+  transition: 1s;
+}
+
+.Btn span {
+  position: relative;
+  text-decoration: none !important; /* <<< tambah ini */
+  color: inherit;
+}
+
+.Btn:hover::before {
+  height: 100%;
+}
+
+.Btn:hover {
+  color: white !important; /* <<< tambah ini biar teks tetap putih saat hover */
+}

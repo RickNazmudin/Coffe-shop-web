@@ -1,0 +1,17 @@
+.ProdectItem{
+    margin: 60px 0;
+    background-color: var(--scoundColor);
+    color: var( --mainColor);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    
+}
+.ProdectItem .productImg {
+    position: sticky;
+    right: 50px;
+    top: -100px;
+    width: 800px;
+    height: 600px;
+    margin-top: 100px;
+}

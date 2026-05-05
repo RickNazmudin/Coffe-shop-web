@@ -1,0 +1,382 @@
+:root {
+  --mainColor: #eae7de;
+  --scoundColor: #171412;
+  --btnColor: #ae9273;
+  --main-margin: 50px 0px;
+}
+
+html {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Untuk anchor links */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* PERUBAHAN PENTING: Body untuk kompensasi navbar fixed */
+body {
+  min-height: 100vh;
+  padding-top: 80px !important; /* Kompensasi tinggi navbar fixed */
+  background-color: var(--mainColor);
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Pastikan konten tidak tertutup navbar */
+.RootLayout > main,
+.HomePage,
+.content {
+  padding-top: 20px; /* Spacing tambahan */
+}
+
+/* LOADING COMPONENT - PERBAIKAN */
+.Loading {
+  text-align: center;
+  margin: var(--main-margin);
+  padding: 100px 20px;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--mainColor);
+}
+
+.Loading h2 {
+  font-size: 70px;
+  color: var(--btnColor);
+  animation: pulse 1.5s infinite;
+  margin-bottom: 30px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* Spinner loading tambahan */
+.Loading::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--btnColor);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+video {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ERROR PAGE STYLING */
+.Error {
+  text-align: center;
+  margin: var(--main-margin);
+  background-color: var(--scoundColor);
+  padding: 100px 10px;
+  min-height: calc(100vh - 160px); /* Account for navbar and padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Error h2 {
+  font-size: 100px;
+  letter-spacing: 9px;
+  color: var(--btnColor);
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.Error h4 {
+  color: var(--mainColor);
+  letter-spacing: 3px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Error p {
+  max-width: 650px;
+  margin: 30px auto 40px;
+  line-height: 2;
+  font-size: 20px;
+  color: #aaa;
+}
+
+/* BUTTON STYLING */
+.BtnError,
+.offersBtn {
+  padding: 13px 30px;
+  border-radius: 10px;
+  background-color: var(--btnColor);
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  font-size: 17px;
+  font-weight: 600;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.BtnError::before,
+.offersBtn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  border-radius: 10px;
+  background-color: var(--scoundColor);
+  transition: 0.5s all ease;
+  z-index: -1;
+}
+
+.BtnError span,
+.offersBtn span {
+  position: relative;
+  z-index: 2;
+}
+
+.BtnError:hover::before,
+.offersBtn:hover::before {
+  height: 100%;
+}
+
+.BtnError:hover,
+.offersBtn:hover {
+  border-color: var(--btnColor);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* SECTION SCROLL OFFSET UNTUK NAVBAR FIXED */
+section,
+header,
+.Section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6[id] {
+  scroll-margin-top: 100px; /* Lebih besar untuk aman */
+}
+
+/* NAVBAR FIXED SUPPORT CLASSES */
+.navbar-fixed {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--mainColor);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* CONTENT WRAPPER UNTUK NAVBAR FIXED */
+.content-wrapper {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* UTILITY CLASSES */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ANIMATION FOR PAGE TRANSITIONS */
+.page-transition {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 868px) {
+  body {
+    padding-top: 70px !important; /* Kurangi untuk mobile */
+  }
+
+  .Error {
+    padding: 60px 10px;
+    min-height: calc(100vh - 140px);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .Error h2 {
+    font-size: 60px;
+    letter-spacing: 5px;
+  }
+
+  .Error h4 {
+    font-size: 20px;
+  }
+
+  .Error p {
+    font-size: 18px;
+    padding: 0 15px;
+  }
+
+  .Loading h2 {
+    font-size: 40px;
+  }
+
+  .Loading::after {
+    width: 40px;
+    height: 40px;
+  }
+
+  section,
+  header,
+  .Section,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6[id] {
+    scroll-margin-top: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 60px !important;
+  }
+
+  .Error h2 {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+
+  .Error p {
+    font-size: 16px;
+  }
+
+  .BtnError,
+  .offersBtn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .Loading h2 {
+    font-size: 30px;
+  }
+
+  section,
+  header,
+  .Section,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6[id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* PRINT STYLES */
+@media print {
+  .navbar-fixed,
+  .Loading,
+  .holderMenu,
+  .offersBtn {
+    display: none !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+}
+
+/* DARK MODE SUPPORT (OPTIONAL) */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  .navbar-fixed {
+    background-color: #1e1e1e;
+  }
+}
+
+/* SCROLLBAR STYLING */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mainColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--btnColor);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9c7a5a;
+}
+
+/* FOCUS VISIBILITY FOR ACCESSIBILITY */
+:focus-visible {
+  outline: 2px solid var(--btnColor);
+  outline-offset: 2px;
+}
+
+/* SELECTION COLOR */
+::selection {
+  background-color: var(--btnColor);
+  color: white;
+}

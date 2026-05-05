@@ -1,0 +1,49 @@
+.Landing {
+  background-color: var(   --mainColor );
+    padding: 70px 30px;
+   
+  
+}
+.Landing .cover {
+    width: 800px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.Landing  h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 2;
+    
+}
+
+
+.Landing p{
+    margin-bottom: 40px;
+}
+
+@media (max-width:868px) {
+    .Landing {
+        text-align: center;
+       
+    }
+    .Landing  h2 {
+        font-size: 36px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+    .Landing .cover {
+            width: 311px;
+             height: 229px;
+             margin-bottom: 50px;
+    }
+    .Landing .btnHolder {
+        display: flex;
+        justify-content: center;
+       
+        
+    }
+  
+
+}

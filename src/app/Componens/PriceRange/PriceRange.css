@@ -1,0 +1,28 @@
+.PriceRange {
+    margin-top: 50px;
+}
+
+.PriceRange .range {
+    appearance: none;
+    width: 150px;
+    height: 9px;
+    background-color: transparent;
+    border: 1px solid var(--btnColor);
+    border-radius: 10px;
+}
+.PriceRange .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background-color: var(--btnColor);
+    border-radius: 50%;
+}
+
+@media(max-width:992px) {
+  .PriceRange .range  {
+       width: 100%;
+       display: block;
+       margin: 0 auto 80px;
+    }
+ 
+}

@@ -1,0 +1,14 @@
+.Card {
+    margin-top: 80px;
+    padding: 20px;
+    margin-bottom: 20px;
+   
+}
+.Card h3 {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.Card h5 {
+    color: var(--btnColor);
+}

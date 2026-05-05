@@ -1,0 +1,24 @@
+.Sorting {
+    margin-top: 50px;
+}
+
+.Sorting select {
+    background-color: transparent;
+    color: var(--btnColor);
+    width: 180px;
+    text-transform: uppercase;
+    text-align: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 5px;
+}
+
+@media(max-width:992px) {
+   .Sorting select {
+       width: 100%;
+       display: block;
+       margin: 0 auto 80px;
+    }
+ 
+}

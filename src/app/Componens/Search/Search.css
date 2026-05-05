@@ -1,0 +1,29 @@
+.Search {
+     margin-top: 50px;
+}
+.Search input {
+    width: 220px;
+    background-color: transparent;
+    color: var(--btnColor);
+    border: 1px solid var(--btnColor);
+    border-radius: 10px;
+    padding: 10px 20px;
+    transition: 2s all;
+}
+
+.Search input:focus {
+    width: 250px;
+     outline: none;
+}
+
+@media(max-width:992px) {
+   .Search input{
+       width: 100%;
+       margin: 0 auto;
+       display: block;
+    }
+    .Search input:focus {
+       width: 100%;
+   
+}
+}
