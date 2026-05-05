@@ -44,20 +44,6 @@ This Café website contains:
 > Place your project images inside the folder: `public/screenshots`  
 > Update the image names if different.
 
-### 🏠 Home Page
-
-![Home](./public/screenshots/home.jpeg)
-
-### 📜 About Page
-
-![About](./public/screenshots/about.jpeg)
-
-### 🍽 Our Menu Page
-
-![product](./public/screenshots/prodect.jpeg)
-
----
-
 ## 🚀 Getting Started
 
 Run the development server:
